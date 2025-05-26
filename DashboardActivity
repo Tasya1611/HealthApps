@@ -1,0 +1,25 @@
+package ac.id.healthapp
+
+import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
+
+class DashboardActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dashboard)
+
+        val newsList = listOf(
+            "Tips Hidup Sehat di Musim Hujan",
+            "Manfaat Olahraga Rutin untuk Kesehatan",
+            "Pentingnya Konsumsi Air Putih",
+            "Cara Meningkatkan Imun Tubuh",
+            "Bahaya Begadang bagi Remaja"
+        )
+
+        val listView = findViewById<ListView>(R.id.lvNews)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, newsList)
+        listView.adapter = adapter
+    }
+}
